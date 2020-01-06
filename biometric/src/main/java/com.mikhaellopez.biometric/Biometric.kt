@@ -1,6 +1,8 @@
 package com.mikhaellopez.biometric
 
 import android.content.Context
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.biometric.BiometricPrompt.PromptInfo
@@ -31,6 +33,7 @@ class Biometric(private val fragment: Fragment) {
             else -> BiometricType.NONE
         }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     fun showBiometricPrompt(
         biometricPromptInfo: BiometricPromptInfo,
         crypto: BiometricPrompt.CryptoObject = Crypto().cryptoObject(),
@@ -45,9 +48,14 @@ class Biometric(private val fragment: Fragment) {
             .setDescription(biometricPromptInfo.description)
             .setConfirmationRequired(biometricPromptInfo.confirmationRequired)
             .build()
-        showBiometricPrompt(promptInfo, getAuthenticationCallback(onSuccess, onError, onFailed), crypto)
+        showBiometricPrompt(
+            promptInfo,
+            getAuthenticationCallback(onSuccess, onError, onFailed),
+            crypto
+        )
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     fun showBiometricPrompt(
         biometricPromptInfo: BiometricPromptInfo,
         authenticationCallback: BiometricPrompt.AuthenticationCallback,
