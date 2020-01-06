@@ -20,6 +20,6 @@
         android:id="@+id/btnPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Launch Biometric Prompt" />
+        android:text="@string/launch_biometric_prompt" />
 
 </LinearLayout>

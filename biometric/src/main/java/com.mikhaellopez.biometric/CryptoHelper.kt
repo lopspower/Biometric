@@ -10,11 +10,20 @@ import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 
-class Crypto {
+class CryptoHelper {
 
     companion object {
         private const val DEFAULT_BIOMETRIC_KEY = "default_biometric_key"
     }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun checkOneBiometricMustBeEnrolled(): Boolean =
+        try {
+            generateKey()
+            true
+        } catch (ex: Exception) {
+            false
+        }
 
     @RequiresApi(Build.VERSION_CODES.M)
     fun cryptoObject(): BiometricPrompt.CryptoObject =

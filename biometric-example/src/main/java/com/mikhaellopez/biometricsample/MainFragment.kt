@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mikhaellopez.biometric.Biometric
+import com.mikhaellopez.biometric.BiometricHelper
 import com.mikhaellopez.biometric.BiometricPromptInfo
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -15,24 +15,30 @@ class MainFragment : Fragment() {
         fun newInstance(): MainFragment = MainFragment()
     }
 
-    private val biometricManager by lazy { Biometric(this) }
+    private val biometricHelper by lazy { BiometricHelper(this) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = inflater.inflate(R.layout.fragment_main, container, false)
+    ): View =
+        inflater.inflate(R.layout.fragment_main, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textBiometricType.text = "Biometric Type: ${biometricManager.getBiometricType()}"
+        textBiometricType.text = getString(R.string.biometric_type, biometricHelper.getBiometricType())
+        btnPrompt.visibility = if (biometricHelper.biometricEnable()) View.VISIBLE else View.GONE
 
         btnPrompt.setOnClickListener {
-            biometricManager.showBiometricPrompt(
-                BiometricPromptInfo("Title", "Cancel")
+            biometricHelper.showBiometricPrompt(
+                BiometricPromptInfo(
+                    title = "Custom title (editable & mandatory)",
+                    negativeButtonText = "Cancel (editable & mandatory)"
+                )
             ) {
-                // Do Something
+                // Do something when success
+
             }
         }
     }

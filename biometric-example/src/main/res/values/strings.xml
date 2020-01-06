@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Biometric</string>
+    <string name="biometric_type">Biometric Type: %s</string>
+    <string name="launch_biometric_prompt">Launch Biometric Prompt</string>
 </resources>
