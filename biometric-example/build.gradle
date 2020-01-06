@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion androidCompileSdkVersion
     defaultConfig {
-        applicationId "com.mikhaellopez.libnamesample"
+        applicationId "com.mikhaellopez.biometricsample"
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
         versionCode 1
@@ -24,8 +24,8 @@ android {
 }
 
 dependencies {
-    implementation project(':libname')
-    //implementation "com.mikhaellopez:libname:$androidVersionName"
+    implementation project(':biometric')
+    //implementation "com.mikhaellopez:biometric:$androidVersionName"
 
     // KOTLIN
     implementation kotlinStdlib

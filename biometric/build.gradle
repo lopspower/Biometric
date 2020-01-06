@@ -25,16 +25,18 @@ android {
 dependencies {
     // KOTLIN
     implementation kotlinStdlib
+    // ANDROID
+    implementation androidXBiometric
 }
 
 //region Publish to jCenter
 def libGroupId = 'com.mikhaellopez'
-def libArtifactId = 'libname'
+def libArtifactId = 'biometric'
 def libVersion = androidVersionName
 def libDesc = ''
 def libLicenses = ['Apache-2.0']
-def libSiteUrl = 'https://github.com/lopspower/LibName'
-def libVCSUrl = 'https://github.com/lopspower/LibName.git'
+def libSiteUrl = 'https://github.com/lopspower/Biometric'
+def libVCSUrl = 'https://github.com/lopspower/Biometric.git'
 
 // Generate Source Jar
 task sourceJar(type: Jar) {
