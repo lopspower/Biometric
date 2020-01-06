@@ -5,5 +5,5 @@ enum class BiometricType {
     FINGERPRINT,
     IRIS,
     MULTIPLE,
-    UNKNOWN
+    NONE
 }

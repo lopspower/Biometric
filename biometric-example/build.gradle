@@ -31,4 +31,6 @@ dependencies {
     implementation kotlinStdlib
     // ANDROID
     implementation androidXAppCompat
+    implementation androidXBiometric
+
 }

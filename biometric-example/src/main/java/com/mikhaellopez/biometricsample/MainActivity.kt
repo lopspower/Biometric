@@ -2,18 +2,20 @@ package com.mikhaellopez.biometricsample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.mikhaellopez.biometric.BiometricManager
-import kotlinx.android.synthetic.main.activity_main.*
+import com.mikhaellopez.biometricsample.extensions.addFragment
 
 class MainActivity : AppCompatActivity() {
-
-    private val biometricManager by lazy { BiometricManager(packageManager) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initializeActivity(savedInstanceState)
+    }
 
-        textBiometricType.text = "Biometric Type: ${biometricManager.getBiometricType()}"
+    private fun initializeActivity(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            addFragment(R.id.container, MainFragment.newInstance())
+        }
     }
 
 }
