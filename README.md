@@ -36,6 +36,7 @@ val biometricHelper = BiometricHelper(fragment)
 // BiometricType = FACE, FINGERPRINT, IRIS, MULTIPLE or NONE
 val biometricType: BiometricType = biometricHelper.getBiometricType()
 
+// Check if biometric is available on the device
 btnStart.visibility = if (biometricHelper.biometricEnable()) View.VISIBLE else View.GONE
 
 btnStart.setOnClickListener {
