@@ -8,6 +8,7 @@ Biometric
 [![Download](https://api.bintray.com/packages/lopspower/maven/com.mikhaellopez:biometric/images/download.svg?version=1.0.0)](https://bintray.com/lopspower/maven/com.mikhaellopez:biometric/1.0.0/link)
 <br>
 [![Twitter](https://img.shields.io/badge/Twitter-@LopezMikhael-blue.svg?style=flat)](http://twitter.com/lopezmikhael)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d86db87d913f4ba4910fcc26a26409ef)](https://www.codacy.com/manual/lopspower/Biometric?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lopspower/Biometric&amp;utm_campaign=Badge_Grade)
 
 The easiest way is to use the new version of [Biometric](https://developer.android.com/jetpack/androidx/releases/biometric) under [AndroidX](https://developer.android.com/jetpack/androidx).
 
