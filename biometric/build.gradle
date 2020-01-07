@@ -33,7 +33,7 @@ dependencies {
 def libGroupId = 'com.mikhaellopez'
 def libArtifactId = 'biometric'
 def libVersion = androidVersionName
-def libDesc = ''
+def libDesc = 'The easiest way is to use the new version of Biometric under AndroidX.'
 def libLicenses = ['Apache-2.0']
 def libSiteUrl = 'https://github.com/lopspower/Biometric'
 def libVCSUrl = 'https://github.com/lopspower/Biometric.git'
