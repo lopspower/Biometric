@@ -46,7 +46,7 @@ class BiometricHelper(private val fragment: Fragment) {
     /**
      * Return true if this device can be used biometric else false.
      *
-     * @return [Boolean].
+     * @return [Boolean]
      */
     fun biometricEnable(): Boolean = checkMinVersion() && getBiometricType() != BiometricType.NONE
 
@@ -152,7 +152,9 @@ class BiometricHelper(private val fragment: Fragment) {
                 fragment,
                 ContextCompat.getMainExecutor(context),
                 authenticationCallback
-            ).authenticate(promptInfo, crypto ?: cryptoHelper.cryptoObject())
+            ).apply {
+                crypto?.also { authenticate(promptInfo, it) } ?: authenticate(promptInfo)
+            }
         }
     }
 
