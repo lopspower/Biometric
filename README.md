@@ -52,6 +52,22 @@ btnStart.setOnClickListener {
 }
 ```
 
+You can also handle error and failed like this:
+
+```kotlin
+biometricHelper.showBiometricPrompt(promptInfo,
+    onError = { errorCode: Int, errString: CharSequence ->
+        // Do something when error
+                    
+    }, onFailed = {
+        // Do something when failed
+                    
+    }, onSuccess = { result: BiometricPrompt.AuthenticationResult ->
+        // Do something when success
+                    
+    })
+```
+
 DEMO
 -----
 
