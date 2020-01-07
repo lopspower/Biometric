@@ -72,7 +72,7 @@ class BiometricHelper(private val fragment: Fragment) {
 
     fun showBiometricPrompt(
         promptInfo: PromptInfo,
-        crypto: BiometricPrompt.CryptoObject? = null,
+        crypto: BiometricPrompt.CryptoObject,
         onError: ((Int, CharSequence) -> Unit)? = null,
         onFailed: (() -> Unit)? = null,
         onSuccess: (BiometricPrompt.AuthenticationResult) -> Unit
