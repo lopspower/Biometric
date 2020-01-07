@@ -33,8 +33,11 @@ class MainFragment : Fragment() {
         btnPrompt.setOnClickListener {
             biometricHelper.showBiometricPrompt(
                 BiometricPromptInfo(
-                    title = "Custom title (editable & mandatory)",
-                    negativeButtonText = "Cancel (editable & mandatory)"
+                    title = "Title", // Mandatory
+                    negativeButtonText = "Cancel", // Mandatory
+                    subtitle = "Subtitle",
+                    description = "Description",
+                    confirmationRequired = true
                 )
             ) {
                 // Do something when success

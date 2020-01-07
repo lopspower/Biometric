@@ -51,6 +51,16 @@ publishing {
             groupId libGroupId
             artifactId libArtifactId
             version libVersion
+
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                // Add KotlinStdlib
+                def androidXBiometricDepNode = dependenciesNode.appendNode('dependency')
+                androidXBiometricDepNode.appendNode('groupId', androidXBiometricGroupId)
+                androidXBiometricDepNode.appendNode('artifactId', androidXBiometricArtifactId)
+                androidXBiometricDepNode.appendNode('version', androidXBiometricVersion)
+            }
+
             artifact(sourceJar)
             artifact("$buildDir/outputs/aar/$libArtifactId-release.aar")
         }

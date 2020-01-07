@@ -20,8 +20,12 @@ ext {
 
     // ANDROID LIB
     androidAppCompatXVersion    = '1.0.2'
-    androidXBiometricVersion    = '1.0.1'
     androidXAppCompat           = "androidx.appcompat:appcompat:$androidAppCompatXVersion"
-    androidXBiometric           = "androidx.biometric:biometric:$androidXBiometricVersion"
+
+    // BIOMETRIC
+    androidXBiometricGroupId    = "androidx.biometric"
+    androidXBiometricArtifactId = "biometric"
+    androidXBiometricVersion    = '1.0.1'
+    androidXBiometric           = "$androidXBiometricGroupId:$androidXBiometricArtifactId:$androidXBiometricVersion"
 
 }
