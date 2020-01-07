@@ -6,7 +6,9 @@ Biometric
 <br>
 [![Twitter](https://img.shields.io/badge/Twitter-@LopezMikhael-blue.svg?style=flat)](http://twitter.com/lopezmikhael)
 
+The easiest way is to use the new version of [Biometric](https://developer.android.com/jetpack/androidx/releases/biometric) under [AndroidX](https://developer.android.com/jetpack/androidx).
 
+You can easily know if the device allows you to use <b>Biometric</b> and under what type (FACE, FINGERPRINT, IRIS, MULTIPLE...). The library also provides a [CryptoObject](https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.CryptoObject) so that you don't have to implement it on your side.
 
 <a href="https://play.google.com/store/apps/details?id=com.mikhaellopez.lopspower">
   <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
