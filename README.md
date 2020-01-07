@@ -72,8 +72,8 @@ biometricHelper.showBiometricPrompt(promptInfo,
 DEMO
 -----
 
-| Dark Mode | Biometric Fingerprint | Old Fingerprint |
-| ----------| --------------------- | --------------- |
+| Dark Mode                                                                                 | Biometric Fingerprint                                                                                   | Old Fingerprint                                                                                         |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | <img src="/preview/face_dark.gif" alt="sample" title="sample" width="250" height="509" /> | <img src="/preview/finger_new.gif" alt="sample" title="sample" width="250" height="486" align="left" /> | <img src="/preview/finger_old.gif" alt="sample" title="sample" width="250" height="430" align="left" /> |
 
 SUPPORT ❤️
