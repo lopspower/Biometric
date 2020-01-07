@@ -5,26 +5,41 @@ import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import androidx.annotation.RequiresApi
 import androidx.biometric.BiometricPrompt
+import java.security.InvalidAlgorithmParameterException
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 
+/**
+ * CryptoHelper is an object to create a default [BiometricPrompt.CryptoObject]
+ * This class is also used to check if one biometric must be enrolled.
+ */
 class CryptoHelper {
 
     companion object {
         private const val DEFAULT_BIOMETRIC_KEY = "default_biometric_key"
     }
 
+    /**
+     * Return true if one biometric must be enrolled else false
+     *
+     * @return [Boolean]
+     */
     @RequiresApi(Build.VERSION_CODES.M)
     fun checkOneBiometricMustBeEnrolled(): Boolean =
         try {
             generateKey()
             true
-        } catch (ex: Exception) {
+        } catch (ex: InvalidAlgorithmParameterException) {
             false
         }
 
+    /**
+     * Returns a default [BiometricPrompt.CryptoObject]
+     *
+     * @return [BiometricPrompt.CryptoObject]
+     */
     @RequiresApi(Build.VERSION_CODES.M)
     fun cryptoObject(): BiometricPrompt.CryptoObject =
         BiometricPrompt.CryptoObject(initCipher(generateKey()))

@@ -8,6 +8,10 @@ import androidx.biometric.BiometricPrompt.PromptInfo
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 
+/**
+ * BiometricHelper is an object that gives you access easier to
+ * the feature of BiometricManager from AndroidX with more feature.
+ */
 class BiometricHelper(private val fragment: Fragment) {
 
     private val context: Context = fragment.context!!
@@ -21,6 +25,11 @@ class BiometricHelper(private val fragment: Fragment) {
             "android.hardware.biometrics.iris" to BiometricType.IRIS
         ).filter { context.packageManager.hasSystemFeature(it.first) }.map { it.second }
 
+    /**
+     * Returns the [BiometricType] available on the device
+     *
+     * @return [BiometricType]
+     */
     fun getBiometricType(): BiometricType =
         if (checkMinVersion() && cryptoHelper.checkOneBiometricMustBeEnrolled()) {
             when (biometricManager.canAuthenticate()) {
@@ -34,8 +43,21 @@ class BiometricHelper(private val fragment: Fragment) {
             }
         } else BiometricType.NONE
 
+    /**
+     * Return true if this device can be used biometric else false.
+     *
+     * @return [Boolean].
+     */
     fun biometricEnable(): Boolean = checkMinVersion() && getBiometricType() != BiometricType.NONE
 
+    /**
+     * Show biometric prompt with [BiometricPromptInfo] and callback
+     *
+     * @param biometricPromptInfo [BiometricPromptInfo]
+     * @param onError Error callback optional, null by default
+     * @param onFailed Failed callback optional, null by default
+     * @param onSuccess Success callback
+     */
     fun showBiometricPrompt(
         biometricPromptInfo: BiometricPromptInfo,
         onError: ((Int, CharSequence) -> Unit)? = null,
@@ -48,6 +70,16 @@ class BiometricHelper(private val fragment: Fragment) {
         )
     }
 
+    /**
+     * Show biometric prompt with [BiometricPromptInfo],
+     * [BiometricPrompt.CryptoObject] and callback
+     *
+     * @param biometricPromptInfo [BiometricPromptInfo]
+     * @param crypto [BiometricPrompt.CryptoObject]
+     * @param onError Error callback optional, null by default
+     * @param onFailed Failed callback optional, null by default
+     * @param onSuccess Success callback
+     */
     fun showBiometricPrompt(
         biometricPromptInfo: BiometricPromptInfo,
         crypto: BiometricPrompt.CryptoObject,
@@ -62,6 +94,14 @@ class BiometricHelper(private val fragment: Fragment) {
         )
     }
 
+    /**
+     * Show biometric prompt with [BiometricPromptInfo],
+     * [BiometricPrompt.AuthenticationCallback] and [BiometricPrompt.CryptoObject]
+     *
+     * @param biometricPromptInfo [BiometricPromptInfo]
+     * @param authenticationCallback [BiometricPrompt.AuthenticationCallback]
+     * @param crypto [BiometricPrompt.CryptoObject] optional, null by default
+     */
     fun showBiometricPrompt(
         biometricPromptInfo: BiometricPromptInfo,
         authenticationCallback: BiometricPrompt.AuthenticationCallback,
@@ -70,6 +110,16 @@ class BiometricHelper(private val fragment: Fragment) {
         showBiometricPrompt(biometricPromptInfo.toPromptInfo(), authenticationCallback, crypto)
     }
 
+    /**
+     * Show biometric prompt with [PromptInfo],
+     * [BiometricPrompt.CryptoObject] and callback
+     *
+     * @param promptInfo [PromptInfo]
+     * @param crypto [BiometricPrompt.CryptoObject]
+     * @param onError Error callback optional, null by default
+     * @param onFailed Failed callback optional, null by default
+     * @param onSuccess Success callback
+     */
     fun showBiometricPrompt(
         promptInfo: PromptInfo,
         crypto: BiometricPrompt.CryptoObject,
@@ -84,6 +134,14 @@ class BiometricHelper(private val fragment: Fragment) {
         )
     }
 
+    /**
+     * Show biometric prompt with [PromptInfo], [BiometricPrompt.AuthenticationCallback]
+     * and [BiometricPrompt.CryptoObject]
+     *
+     * @param promptInfo [PromptInfo]
+     * @param authenticationCallback [BiometricPrompt.AuthenticationCallback]
+     * @param crypto [BiometricPrompt.CryptoObject] optional, null by default
+     */
     fun showBiometricPrompt(
         promptInfo: PromptInfo,
         authenticationCallback: BiometricPrompt.AuthenticationCallback,

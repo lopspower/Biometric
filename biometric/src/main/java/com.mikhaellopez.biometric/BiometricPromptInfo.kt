@@ -1,5 +1,9 @@
 package com.mikhaellopez.biometric
 
+/**
+ * BiometricPromptInfo is a data class to simplify the creation of PromptInfo
+ * from Biometric AndroidX.
+ */
 data class BiometricPromptInfo(
     val title: String,
     val negativeButtonText: String,
