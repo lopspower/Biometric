@@ -5,6 +5,7 @@ Biometric
 
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
+[![Download](https://api.bintray.com/packages/lopspower/maven/com.mikhaellopez:biometric/images/download.svg?version=1.0.0)](https://bintray.com/lopspower/maven/com.mikhaellopez:biometric/1.0.0/link)
 <br>
 [![Twitter](https://img.shields.io/badge/Twitter-@LopezMikhael-blue.svg?style=flat)](http://twitter.com/lopezmikhael)
 
