@@ -1,7 +1,9 @@
-<img src="/preview/face.gif" alt="sample" title="sample" width="250" height="509" align="right" />
+<p align="center"><img src="/preview/header.png"></p>
 
 Biometric
 =================
+
+<img src="/preview/face.gif" alt="sample" title="sample" width="250" height="509" align="right" />
 
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
