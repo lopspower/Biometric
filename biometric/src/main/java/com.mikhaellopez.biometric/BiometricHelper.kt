@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 
 /**
+ * Copyright (C) 2020 Mikhael LOPEZ
  * BiometricHelper is an object that gives you access easier to
  * the feature of BiometricManager from AndroidX with more feature.
  */

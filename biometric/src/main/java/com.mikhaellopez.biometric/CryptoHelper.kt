@@ -12,6 +12,7 @@ import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 
 /**
+ * Copyright (C) 2020 Mikhael LOPEZ
  * CryptoHelper is an object to create a default [BiometricPrompt.CryptoObject]
  * This class is also used to check if one biometric must be enrolled.
  */

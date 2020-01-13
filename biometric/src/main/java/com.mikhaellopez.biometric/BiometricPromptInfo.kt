@@ -1,6 +1,7 @@
 package com.mikhaellopez.biometric
 
 /**
+ * Copyright (C) 2020 Mikhael LOPEZ
  * BiometricPromptInfo is a data class to simplify the creation of PromptInfo
  * from Biometric AndroidX.
  */
