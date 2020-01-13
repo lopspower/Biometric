@@ -11,15 +11,15 @@ ext {
     androidVersionName          = '1.0.1'
 
     // ANDROID VERSION
-    androidCompileSdkVersion    = 28
+    androidCompileSdkVersion    = 29
     androidMinSdkVersion        = 16
-    androidTargetSdkVersion     = 28
+    androidTargetSdkVersion     = 29
 
     // KOTLIN
     kotlinStdlib                = "org.jetbrains.kotlin:kotlin-stdlib:${ext.kotlin_version}"
 
     // ANDROID LIB
-    androidAppCompatXVersion    = '1.0.2'
+    androidAppCompatXVersion    = '1.1.0'
     androidXAppCompat           = "androidx.appcompat:appcompat:$androidAppCompatXVersion"
 
     // BIOMETRIC
@@ -27,5 +27,19 @@ ext {
     androidXBiometricArtifactId = "biometric"
     androidXBiometricVersion    = '1.0.1'
     androidXBiometric           = "$androidXBiometricGroupId:$androidXBiometricArtifactId:$androidXBiometricVersion"
+
+    // DEPENDENCY CHECK STRATEGY
+    dependencyUpdatesStrategy = {
+        componentSelection { rules ->
+            rules.all { ComponentSelection selection ->
+                boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm'].any { qualifier ->
+                    selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
+                }
+                if (rejected) {
+                    selection.reject('Release candidate')
+                }
+            }
+        }
+    }
 
 }
