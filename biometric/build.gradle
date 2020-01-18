@@ -54,7 +54,7 @@ publishing {
 
             pom.withXml {
                 def dependenciesNode = asNode().appendNode('dependencies')
-                // Add KotlinStdlib
+                // Add AndroidXBiometric
                 def androidXBiometricDepNode = dependenciesNode.appendNode('dependency')
                 androidXBiometricDepNode.appendNode('groupId', androidXBiometricGroupId)
                 androidXBiometricDepNode.appendNode('artifactId', androidXBiometricArtifactId)
