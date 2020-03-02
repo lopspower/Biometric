@@ -5,7 +5,6 @@ import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import androidx.annotation.RequiresApi
 import androidx.biometric.BiometricPrompt
-import java.security.InvalidAlgorithmParameterException
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
@@ -32,7 +31,7 @@ class CryptoHelper {
         try {
             generateKey()
             true
-        } catch (ex: InvalidAlgorithmParameterException) {
+        } catch (ex: Exception) {
             false
         }
 
