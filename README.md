@@ -7,7 +7,7 @@ Biometric
 
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
-[![Download](https://api.bintray.com/packages/lopspower/maven/com.mikhaellopez:biometric/images/download.svg?version=1.0.1)](https://bintray.com/lopspower/maven/com.mikhaellopez:biometric/1.0.1/link)
+[![Download](https://api.bintray.com/packages/lopspower/maven/com.mikhaellopez:biometric/images/download.svg?version=1.0.2)](https://bintray.com/lopspower/maven/com.mikhaellopez:biometric/1.0.2/link)
 <br>
 [![Twitter](https://img.shields.io/badge/Twitter-@LopezMikhael-blue.svg?style=flat)](http://twitter.com/lopezmikhael)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d86db87d913f4ba4910fcc26a26409ef)](https://www.codacy.com/manual/lopspower/Biometric?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lopspower/Biometric&amp;utm_campaign=Badge_Grade)
@@ -26,7 +26,7 @@ USAGE
 To used this usefull library you can grab it via Gradle:
 
 ```groovy
-implementation 'com.mikhaellopez:biometric:1.0.1'
+implementation 'com.mikhaellopez:biometric:1.0.2'
 ```
 
 KOTLIN
