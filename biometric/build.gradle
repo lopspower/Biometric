@@ -1,7 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion androidCompileSdkVersion
@@ -29,64 +27,4 @@ dependencies {
     implementation androidXBiometric
 }
 
-//region Publish to jCenter
-def libGroupId = 'com.mikhaellopez'
-def libArtifactId = 'biometric'
-def libVersion = androidVersionName
-def libDesc = 'The easiest way is to use the new version of Biometric under AndroidX.'
-def libLicenses = ['Apache-2.0']
-def libSiteUrl = 'https://github.com/lopspower/Biometric'
-def libVCSUrl = 'https://github.com/lopspower/Biometric.git'
-
-// Generate Source Jar
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
-}
-
-// Create the publication with the pom configuration
-publishing {
-    publications {
-        MyPublication(MavenPublication) {
-            groupId libGroupId
-            artifactId libArtifactId
-            version libVersion
-
-            pom.withXml {
-                def dependenciesNode = asNode().appendNode('dependencies')
-                // Add AndroidXBiometric
-                def androidXBiometricDepNode = dependenciesNode.appendNode('dependency')
-                androidXBiometricDepNode.appendNode('groupId', androidXBiometricGroupId)
-                androidXBiometricDepNode.appendNode('artifactId', androidXBiometricArtifactId)
-                androidXBiometricDepNode.appendNode('version', androidXBiometricVersion)
-            }
-
-            artifact(sourceJar)
-            artifact("$buildDir/outputs/aar/$libArtifactId-release.aar")
-        }
-    }
-}
-
-// Bintray config
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-    publications = ['MyPublication']
-    pkg {
-        repo = "maven"
-        name = "$libGroupId:$libArtifactId"
-        desc = libDesc
-        licenses = libLicenses
-        websiteUrl = libSiteUrl
-        vcsUrl = libVCSUrl
-        version {
-            name = libVersion
-            vcsTag = libVersion
-            released = new Date()
-        }
-    }
-}
-//endregion
+apply from: rootProject.file('gradle/publish-mavencentral.gradle')
