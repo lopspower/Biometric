@@ -8,9 +8,7 @@ Biometric
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
 [![Maven Central](https://img.shields.io/maven-central/v/com.mikhaellopez/biometric.svg?label=Maven%20Central)](https://search.maven.org/artifact/com.mikhaellopez/biometric)
-<br>
 [![Twitter](https://img.shields.io/badge/Twitter-@LopezMikhael-blue.svg?style=flat)](http://twitter.com/lopezmikhael)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d86db87d913f4ba4910fcc26a26409ef)](https://www.codacy.com/manual/lopspower/Biometric?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lopspower/Biometric&amp;utm_campaign=Badge_Grade)
 
 The easiest way is to use the new version of [Biometric](https://developer.android.com/jetpack/androidx/releases/biometric) under [AndroidX](https://developer.android.com/jetpack/androidx).
 
